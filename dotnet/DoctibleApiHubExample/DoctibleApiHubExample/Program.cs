@@ -36,9 +36,15 @@ namespace DoctibleApiHubExample
 
             HttpClient client = new HttpClient();
             // add Authorization header
+            System.Console.WriteLine("Consumer Token:");
+            System.Console.WriteLine(jwt);
+            System.Console.WriteLine("");
+
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
 
-            var response = await client.GetAsync( ENDPOINT + "/profile");
+            var response = await client.GetAsync( ENDPOINT + "/locations");
+
+            System.Console.WriteLine("Locations:");
 
             System.Console.Write(await response.Content.ReadAsStringAsync());
         }
