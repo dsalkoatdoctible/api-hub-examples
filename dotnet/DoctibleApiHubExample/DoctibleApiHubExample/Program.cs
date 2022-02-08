@@ -17,7 +17,7 @@ namespace DoctibleApiHubExample
         const String API_KEY = "fea520e24a39c3cb4134"; // provided by Doctible
         const String JWT_ALGO = "ES256"; // digital signature algorithm
         const String SCOPE = "profile"; // different API endpoints require differnt scope
-        const String ENDPOINT = "https://fairbill.me/api_hub"; // may change in future
+        const String ENDPOINT = "https://fairbill.me/api_hub/v1"; // may change in future
 
         static async Task Main(string[] args)
         {
@@ -69,7 +69,7 @@ namespace DoctibleApiHubExample
 
             foreach(var treatment in treatments.EnumerateArray())
             {
-                System.Console.WriteLine(treatment.GetProperty("id").GetString().PadRight(10,' ') + " " + treatment.GetProperty("name").GetString());
+                System.Console.WriteLine(treatment.GetProperty("id").GetRawText().PadRight(10,' ') + " " + treatment.GetProperty("name").GetString());
             }
 
             /*** /practitioners ***/
@@ -82,7 +82,7 @@ namespace DoctibleApiHubExample
 
             foreach (var practitioner in practitioners.EnumerateArray())
             {
-                System.Console.WriteLine(practitioner.GetProperty("id").GetString().PadRight(10, ' ') + " " + practitioner.GetProperty("first_name").GetString() + " " + practitioner.GetProperty("last_name").GetString());
+                System.Console.WriteLine(practitioner.GetProperty("id").GetRawText().PadRight(10, ' ') + " " + practitioner.GetProperty("first_name").GetString() + " " + practitioner.GetProperty("last_name").GetString());
             }
         }
 
