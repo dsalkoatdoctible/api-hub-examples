@@ -17,7 +17,7 @@ namespace DoctibleApiHubExample
         const String API_KEY = "fea520e24a39c3cb4134"; // provided by Doctible
         const String JWT_ALGO = "ES256"; // digital signature algorithm
         const String SCOPE = "profile"; // different API endpoints require differnt scope
-        const String ENDPOINT = "https://fairbill.me/api_hub/v1"; // may change in future
+        const String ENDPOINT = "https://www.fairbill.me/api_hub/v1"; // may change in future
 
         static async Task Main(string[] args)
         {
